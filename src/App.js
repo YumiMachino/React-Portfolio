@@ -8,15 +8,19 @@ import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 function App() {
 
   return (
-    <>
+    
     <Router>  
-      <Navbar />
-      <Switch>
-        <Route patj='/' exact></Route>
+      <div class="nav-intro-section">
+         <Navbar />
+      {/* <Switch>
+        <Route path='/' exact></Route>
       </Switch> 
-      <Intro />
+       <Intro /> */}
+       <Intro />
+      </div>
+     
     </Router>
-    </>
+    
    
    
      

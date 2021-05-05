@@ -1,24 +1,11 @@
-/* .navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  background-color: navy;
-  height: 100px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.navbar h1 {
-  color: white;
+.nav-intro-section {
+  margin: auto 0;
+  padding: 0;
+  height: 800px;
+  background-color: purple;
 }
-
-.navbar a {
-  margin-left: 16px;
-}
-
-.navbar a:hover {
-  color: blue;
-}
-
-.intro_section {
-  background-color: aqua;
-} */
