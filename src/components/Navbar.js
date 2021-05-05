@@ -22,7 +22,7 @@ const Navbar = () => {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
+            <li className='nav-item nav-home'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 HOME
               </Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li>
+            <li className='nav-item'>
               <Link
                 to='/contact'
                 className='nav-links'

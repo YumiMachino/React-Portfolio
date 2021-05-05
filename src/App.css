@@ -1,11 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .nav-intro-section {
   margin: auto 0;
   padding: 0;
-  height: 800px;
-  background-color: purple;
+  height: 678px;
+  width: 100%;
+  background-image: url(./img/earth.jpg);
+  background-size: cover;
 }
