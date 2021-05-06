@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import { Button, Container } from '@material-ui/core';
 import Intro from './components/Intro';
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
+import About from './components/About';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
        <Intro /> */}
        <Intro />
       </div>
+      <About />
      
     </Router>
     

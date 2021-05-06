@@ -10,10 +10,10 @@ const Intro = () => {
     return ( 
         <div className="intro-section">
             <h1 className="intro-title">Hello, <br/>I'm Yumi Machino</h1>
+            <h1 className="intro-title-mobile">Hello, I'm <br/>Yumi Machino</h1>
             <p className="intro-subtitle">
                 <Typing speed={150} loop={true}>
                     <span>Front End Developer</span>
-                    {/* <Typing.Delay ms={200} /> */}
                     <Typing.Backspace count={20}/>
                 </Typing>
                 </p>

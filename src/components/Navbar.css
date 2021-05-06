@@ -1,5 +1,19 @@
 .navbar {
-  /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
+  background-color: transparent;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+/*When scrolled up*/
+.navbarColorChange {
+  background-color: #fff;
   height: 140px;
   display: flex;
   justify-content: center;
@@ -12,11 +26,15 @@
 }
 
 .navbar-container {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 140px;
-  max-width: 1500px;
+  width: 100%;
+  font-weight: bold;
+  /* max-width: 1500px; */
 }
 
 .navbar-logo {
@@ -26,7 +44,15 @@
   cursor: pointer;
   text-decoration: none;
   display: flex;
-  align-items: center;
+}
+
+.changeLogoColor {
+  color: black;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
 }
 
 .fa-user {
@@ -51,6 +77,12 @@
   font-size: 16px;
 }
 
+.changeUnderLine {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+}
+
 .nav-links {
   color: #fff;
   display: flex;
@@ -59,6 +91,30 @@
   padding: 8px;
   height: 100%;
   position: relative;
+}
+
+/*When scrolled up*/
+.linkLetterColorChange {
+  color: #313f9f;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /*reset default css*/
+  padding: 8px;
+  height: 100%;
+  position: relative;
+}
+
+.changeUnderLine::after {
+  content: "";
+  display: block;
+  width: 0;
+  transition: width 0.5s;
+  border-bottom: 2.5px solid red;
+}
+
+.changeUnderLine:hover::after {
+  margin-left: 5px;
+  width: 60%;
 }
 
 .nav-item::after {
@@ -75,7 +131,8 @@
 }
 
 .fa-bars {
-  color: #fff;
+  /* color: #fff; */
+  color: black;
   font-size: xx-large;
   margin-top: 10px;
   margin-right: 5px;
@@ -85,8 +142,7 @@
   display: none;
 }
 
-/*960px*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
   /*drop down menu*/
   .nav-menu {
     display: flex;
@@ -130,6 +186,13 @@
     transform: translate(25%, 50%);
   }
 
+  .changeLogoColor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
   .menu-icon {
     display: block;
     position: absolute;
@@ -143,5 +206,10 @@
   .fa-times {
     color: #fff;
     font-size: 2rem;
+  }
+
+  .fa-user {
+    font-size: 3rem;
+    margin-top: 0.5rem;
   }
 }

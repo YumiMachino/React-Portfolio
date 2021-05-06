@@ -1,5 +1,4 @@
 .intro-section {
-  /* background-color: navy; */
   margin: 40px 97.5px;
   padding: 0px 15px;
   text-align: center;
@@ -11,8 +10,39 @@
   color: #fff;
 }
 
+.intro-title-mobile {
+  display: none;
+}
+
 .intro-subtitle {
   margin: 0px 0px 20px 0px;
   color: #fff;
   font-size: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .intro-section {
+    margin: 40px 10px;
+    padding: 0px 15px;
+    text-align: center;
+  }
+  .intro-title {
+    font-size: 48px;
+  }
+
+  .intro-subtitle {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .intro-title-mobile {
+    display: block;
+    color: #fff;
+    font-size: 48px;
+  }
+
+  .intro-title {
+    display: none;
+  }
 }
