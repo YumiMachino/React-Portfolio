@@ -141,7 +141,7 @@
   display: none;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 765px) {
   /*drop down menu*/
   .nav-menu {
     display: flex;

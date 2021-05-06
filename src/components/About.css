@@ -13,7 +13,7 @@
 }
 
 .about-container {
-  height: 800px;
+  height: 950px;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -26,10 +26,6 @@
 .skills {
   margin: auto;
   width: 80%;
-}
-
-.empty-container {
-  height: 1rem;
 }
 
 .skill_category {
@@ -47,7 +43,7 @@
   display: block;
   position: relative;
   width: 40%;
-  border: 1px solid #1177f6;
+  border: 1px solid #313f9f;
   margin-top: 8px;
 }
 
@@ -86,6 +82,55 @@
   display: block;
   position: relative;
   width: 40%;
-  border: 1px solid #1177f6;
+  border: 1px solid #313f9f;
   margin-top: 8px;
+}
+
+.self-intro {
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 16px;
+  text-align: left;
+}
+
+@media screen and (max-width: 765px) {
+  /*parent element of about-countainer*/
+
+  .about-wrapper {
+    position: relative;
+    text-align: center;
+    margin: auto 0;
+  }
+
+  .about-container {
+    height: 1400px;
+    background-color: #fff;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    position: relative;
+    padding: 0 30px;
+    justify-content: center;
+    /*shadow effect*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .skills {
+    position: absolute;
+    top: 0;
+    margin: 0px 20px;
+    padding-top: 20px;
+  }
+
+  .about-me {
+    position: absolute;
+    top: 700px;
+    margin: 10px 20px;
+    /* padding: 0; */
+    padding-top: 20px;
+    height: 600px;
+  }
 }

@@ -27,14 +27,27 @@ const About = () => {
         {id: "Tool_skill", content:"Git, Bash", percentage: 60}
     ]
 
+    const self_intro = [
+        {
+          id: "first-p-about",
+          content:
+            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+        },
+        {
+          id: "second-p-about",
+          content:
+            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+        }
+    ]
+
+
     return ( 
         <div className="about-section">
             <div className="about-wrapper">
                 <div className="about-container">
 
                     <div className="skills">
-                        <div className="empty-container" />
-                        <h5 className="skill_category">Programming Skills</h5>
+                        <h5 className="skill_category">Programming Skills:</h5>
                         {programming_skills.map((skill) => (
                             <>
                                 <div className="skill-name">
@@ -44,7 +57,7 @@ const About = () => {
                             <ProgressBar key={skill.id} percentage={skill.percentage}/>
                             </>
                         ))}
-                        <h5 className="skill_category">Frameworks/Tools</h5>
+                        <h5 className="skill_category">Frameworks/Tools:</h5>
                           {other_skills.map((skill) => (
                             <>
                                 <div className="skill-name">
@@ -59,8 +72,16 @@ const About = () => {
 
                     <div className="about-me">
                         <h5 className="title-left">About Me</h5>
-                        <p>About me section</p>
-                        {/* <p>{about_me}</p> */}
+                            {self_intro.map((paragraph) => (
+                                <div className="self-intro">
+                                    <span>{paragraph.content}</span>
+                                </div>
+                            )
+
+                            )}
+
+
+
                     </div>
                 </div>
             </div>

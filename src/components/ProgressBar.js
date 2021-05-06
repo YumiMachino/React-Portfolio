@@ -17,7 +17,7 @@ const ProgressBar = (props) => {
     const filterStyles = {
         height: '100%',
         width: `${percentage}%`,
-        backgroundColor: "#1177F6",
+        backgroundColor: "#313F9F",
         borderRadius: 'inherit',
         textAlign: 'right'
     }
