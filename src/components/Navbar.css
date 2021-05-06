@@ -209,6 +209,26 @@
 
   .fa-times {
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.7rem;
+  }
+
+  .fa-times:focus,
+  .fa-times:hover {
+    animation: wobble 3s 1;
+  }
+
+  @keyframes wobble {
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(90deg);
+    }
+    75% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(90deg);
+    }
   }
 }

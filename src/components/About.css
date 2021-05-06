@@ -1,18 +1,91 @@
 .about-section {
-  height: 300px;
+  height: 600px;
   background-color: #f5f5f5;
   padding-top: 64px;
+  color: #4e4e4e;
 }
 
 .about-wrapper {
-  padding: 64px 58px 48px 58px;
-  background-color: blue;
+  padding: 0px 58px 48px 58px;
+  background-color: #f5f5f5;
   text-align: center;
   margin: auto 0;
 }
 
 .about-container {
-  height: 200px;
-  background-color: red;
-  /* margin: 0px 50px; */
+  height: 800px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+  /*shadow effect*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.skills {
+  margin: auto;
+  width: 80%;
+}
+
+.empty-container {
+  height: 1rem;
+}
+
+.skill_category {
+  font-size: 20px;
+  color: #1f1f1f;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 16px;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.skill_category::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 40%;
+  border: 1px solid #1177f6;
+  margin-top: 8px;
+}
+
+.skill-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.skill-name-left {
+  margin-left: 20px;
+}
+
+.skill-percentage {
+  margin-right: 20px;
+}
+
+.about-me {
+  /* background-color: green; */
+  margin: auto;
+  width: 80%;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.title-left {
+  font-size: 32px;
+  text-align: left;
+  color: #1f1f1f;
+}
+
+/*underline style*/
+.title-left::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 40%;
+  border: 1px solid #1177f6;
+  margin-top: 8px;
 }
