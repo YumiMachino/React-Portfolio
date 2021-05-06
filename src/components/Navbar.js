@@ -16,7 +16,7 @@ const Navbar = () => {
 
     /*change navbar color when scrolled*/
     const changeNavbarColor = () => {
-      if (window.scrollY >= 80) {
+      if (window.scrollY >= 140) {
         setColorChange(true);
       } else {
         setColorChange(false);
@@ -34,9 +34,10 @@ const Navbar = () => {
             <i class='fas fa-user' />
           </Link>
 
-          <div className={colorChange ? 'changeIconColor' : 'menu-icon'} onClick={handleClick}>
+          <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
+
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className= {colorChange ? 'changeUnderLine' : 'nav-item' }>
               <Link to='/' className={colorChange ? 'linkLetterColorChange' : 'nav-links' } onClick={closeMobileMenu}>

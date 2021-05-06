@@ -109,7 +109,7 @@
   display: block;
   width: 0;
   transition: width 0.5s;
-  border-bottom: 2.5px solid red;
+  border-bottom: 2.5px solid #313f9f;
 }
 
 .changeUnderLine:hover::after {
@@ -131,8 +131,7 @@
 }
 
 .fa-bars {
-  /* color: #fff; */
-  color: black;
+  color: #fff;
   font-size: xx-large;
   margin-top: 10px;
   margin-right: 5px;
@@ -148,7 +147,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 50vh;
+    height: 28vh;
     position: absolute;
     top: 120px;
     left: -100%;
@@ -164,19 +163,24 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+    padding-left: 2.2rem;
+  }
+
+  .nav-item:hover::after {
+    margin-left: 5px;
+    width: 40px;
   }
 
   .nav-links {
-    text-align: center;
-    padding: 1rem;
+    text-align: left;
+    padding: 0.1rem;
     width: 100%;
     display: table;
   }
 
-  .nav-links:hover {
-    background-color: #fff;
-    color: #242424;
-    border-radius: 0;
+  .fa-user {
+    margin-left: 1rem;
+    font-size: 4rem;
   }
 
   .navbar-logo {
@@ -206,10 +210,5 @@
   .fa-times {
     color: #fff;
     font-size: 2rem;
-  }
-
-  .fa-user {
-    font-size: 3rem;
-    margin-top: 0.5rem;
   }
 }
