@@ -4,6 +4,7 @@ import { Button, Container } from '@material-ui/core';
 import Intro from './components/Intro';
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import About from './components/About';
+import Portfolio from './components/Portfolio';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
        <Intro />
       </div>
       <About />
+      <Portfolio />
      
     </Router>
     

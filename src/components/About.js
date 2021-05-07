@@ -1,16 +1,9 @@
-import React from 'react';
 import '../App.css';
 import './About.css'
 import ProgressBar from './ProgressBar';
 
 const About = () => {
 
-    const testData = [
-        {id:1, percentage: 60},
-        {id: 2, percentage: 30 },
-        {id:3, percentage: 53 },
-    ];
-  
     const programming_skills = [
         {id: "HTML_skill", content: "HTML", percentage: 90},
         {id: "CSS_skill", content: "CSS", percentage: 70},

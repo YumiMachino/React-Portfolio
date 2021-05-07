@@ -1,19 +1,17 @@
 .about-section {
-  height: 600px;
   background-color: #f5f5f5;
   padding-top: 64px;
   color: #4e4e4e;
 }
 
 .about-wrapper {
-  padding: 0px 58px 48px 58px;
+  padding: 0px 68px 48px 68px;
   background-color: #f5f5f5;
   text-align: center;
   margin: auto 0;
 }
 
 .about-container {
-  height: 950px;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -63,7 +61,6 @@
 }
 
 .about-me {
-  /* background-color: green; */
   margin: auto;
   width: 80%;
   height: 100%;
@@ -95,7 +92,6 @@
 
 @media screen and (max-width: 765px) {
   /*parent element of about-countainer*/
-
   .about-wrapper {
     position: relative;
     text-align: center;
@@ -105,7 +101,6 @@
   .about-container {
     height: 1400px;
     background-color: #fff;
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -129,7 +124,6 @@
     position: absolute;
     top: 700px;
     margin: 10px 20px;
-    /* padding: 0; */
     padding-top: 20px;
     height: 600px;
   }
