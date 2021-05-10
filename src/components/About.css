@@ -8,17 +8,18 @@
   padding: 0px 68px 48px 68px;
   background-color: #f5f5f5;
   text-align: center;
-  margin: auto 0;
 }
 
 .about-container {
   background-color: #fff;
+
   display: flex;
   justify-content: center;
   padding-top: 64px;
   /*shadow effect*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
+  min-height: auto;
 }
 
 .skills {
@@ -99,7 +100,7 @@
   }
 
   .about-container {
-    height: 1400px;
+    height: 1550px;
     background-color: #fff;
     display: flex;
     flex-direction: column;

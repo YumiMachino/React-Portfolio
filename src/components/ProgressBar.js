@@ -1,3 +1,4 @@
+/*This components represent Progress bar shown in the About.js*/
 
 const ProgressBar = (props) => {
     const { percentage } = props;

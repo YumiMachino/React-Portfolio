@@ -9,38 +9,36 @@ import { makeStyles } from '@material-ui/core';
 
 
 const ProjectCard = (props) => {
+  /*setting props*/
+  const { title, thumbnail, languages, projectURL} = props;
+  
+  /*setting for styling */
+  const useStyle = makeStyles({
+    card: {
+      maxWidth: 350,
+      backgroundColor: "#CDE1F8",
+      marginLeft:20,
+      marginRight:20,
+      marginTop:10,
+      marginBottom:10,
+    },
+    media: {
+      height: "300px",
+      backgroundColor:"#4287f5"
+    }
+  });
 
-    const { title, img, languages, projectURL} = props;
- 
-    const useStyle = makeStyles({
-      card: {
-            maxWidth: 350,
-            backgroundColor: "#CDE1F8",
-            marginLeft:20,
-            marginRight:20,
-            marginTop:10,
-            marginBottom:10,
-      },
-      media: {
-        height: "300px",
-        backgroundColor:"#4287f5"
-      }
-    　}
-    );
-
-    const classes = useStyle();
-
+  const classes = useStyle();
 
     return ( 
         <Card className={classes.card}> 
-            <CardActionArea>
-                <CardMedia className={classes.media}
-                 component='img'
-
-                 src = {img}
-                />
-         
-            <CardContent  >
+          <CardActionArea>
+            <CardMedia 
+              className={classes.media}
+              component='img'
+              src={thumbnail}
+            />
+            <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
                 {title}
               </Typography>
@@ -48,13 +46,13 @@ const ProjectCard = (props) => {
                 {languages}
               </Typography>
             </CardContent>
-
-            </CardActionArea>
-            <CardActions >
-        <Button size="small" color="primary" href={projectURL} variant='outlined'>
-          Check this out
-        </Button>
-      </CardActions>
+          </CardActionArea>
+          
+          <CardActions disableSpacing='true' marginLeft="10">
+            <Button size="small" color="primary" href={projectURL} variant='outlined'>
+              Check this out
+            </Button>
+           </CardActions>
         </Card>
      );
 }

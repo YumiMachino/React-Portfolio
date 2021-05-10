@@ -5,6 +5,7 @@ import Intro from './components/Intro';
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       </div>
       <About />
       <Portfolio />
+      <Contact/>
      
     </Router>
     

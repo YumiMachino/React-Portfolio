@@ -15,7 +15,7 @@ const About = () => {
     ]
 
     const other_skills = [
-        {id: "iOS_skill", content:"UIKit, CoreData", percentage: 70},
+        {id: "iOS_skill", content:"iOS Development", percentage: 70},
         {id: "Web_skill", content: "React(Next.js)", percentage: 75},
         {id: "Tool_skill", content:"Git, Bash", percentage: 60}
     ]
@@ -42,43 +42,38 @@ const About = () => {
                     <div className="skills">
                         <h5 className="skill_category">Programming Skills:</h5>
                         {programming_skills.map((skill) => (
-                            <>
+                            <div key={skill.id}>
                                 <div className="skill-name">
                                     <span className="skill-name-left">{skill.content}</span>
                                     <span className="skill-percentage">{skill.percentage}%</span>
                                 </div>
-                            <ProgressBar key={skill.id} percentage={skill.percentage}/>
-                            </>
+                                <ProgressBar key={skill.id} percentage={skill.percentage}/>
+                            </div>
                         ))}
                         <h5 className="skill_category">Frameworks/Tools:</h5>
                           {other_skills.map((skill) => (
-                            <>
+                            <div key={skill.id}>
                                 <div className="skill-name">
                                     <span className="skill-name-left">{skill.content}</span>
                                     <span className="skill-percentage">{skill.percentage}%</span>
                                 </div>
-                            <ProgressBar key={skill.id} percentage={skill.percentage}/>
-                            </>
+                                <ProgressBar key={skill.id} percentage={skill.percentage}/>
+                            </div>
                         ))}
-
                     </div>
 
                     <div className="about-me">
                         <h5 className="title-left">About Me</h5>
+                        <div className="intro-paragraph">
                             {self_intro.map((paragraph) => (
-                                <div className="self-intro">
+                                <div className="self-intro" key={paragraph.id}>
                                     <span>{paragraph.content}</span>
                                 </div>
-                            )
-
-                            )}
-
-
-
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </div>
      );
 }

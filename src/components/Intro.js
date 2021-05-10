@@ -11,12 +11,12 @@ const Intro = () => {
         <div className="intro-section">
             <h1 className="intro-title">Hello, <br/>I'm Yumi Machino</h1>
             <h1 className="intro-title-mobile">Hello, I'm <br/>Yumi Machino</h1>
-            <p className="intro-subtitle">
+            <div className="intro-subtitle">
                 <Typing speed={150} loop={true}>
-                    <span>Front End Developer</span>
+                    <span>Software Developer</span>
                     <Typing.Backspace count={20}/>
                 </Typing>
-                </p>
+            </div>
             <Button variant="contained" color="primary">View My Work</Button>
         </div>
      );
