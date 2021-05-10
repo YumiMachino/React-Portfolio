@@ -30,7 +30,7 @@ const Navbar = () => {
         <nav className= {colorChange ? 'navbarColorChange' : 'navbar'}>
           <div className='navbar-container'>
             <Link to='/' className={colorChange ? 'changeLogoColor' : 'navbar-logo'} onClick={closeMobileMenu}>
-              <i class='fas fa-user' />
+              <i className='fas fa-user' />
             </Link>
             <div className='menu-icon' onClick={handleClick}>
               <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

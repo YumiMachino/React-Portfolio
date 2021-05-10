@@ -47,8 +47,8 @@ const ProjectCard = (props) => {
               </Typography>
             </CardContent>
           </CardActionArea>
-          
-          <CardActions disableSpacing='true' marginLeft="10">
+
+          <CardActions>
             <Button size="small" color="primary" href={projectURL} variant='outlined'>
               Check this out
             </Button>

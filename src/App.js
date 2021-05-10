@@ -13,7 +13,7 @@ function App() {
   return (
     
     <Router>  
-      <div class="nav-intro-section">
+      <div className="nav-intro-section">
          <Navbar />
       {/* <Switch>
         <Route path='/' exact></Route>
