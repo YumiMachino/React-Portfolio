@@ -39,7 +39,7 @@ const projects = [
           <div className="cards">
             {projects.map((project) => (
               <div className="card" key={project.id}>
-                <ProjectCard key={project.id} title={project.title} thumbnail={project.thumbnail} languages={project.languages} projectURL={project.projectURL} />
+                <ProjectCard key={project.id} title={project.title} thumbnail={project.thumbnail} languages={project.languages} projectURL={project.projectURL}/>
               </div>
             ))}
             </div>
