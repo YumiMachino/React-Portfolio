@@ -31,7 +31,7 @@ const projects = [
 ]
 
     return ( 
-        <div className="portfolio-section">
+        <div id="work" className="portfolio-section">
           <div className="portfolio_title">
               <h3>PORTFOLIO</h3>
               <p>Here, you can see projects I've worked so far!</p>

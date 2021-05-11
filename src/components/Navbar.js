@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import '../App.css';
-
+import { HashLink } from 'react-router-hash-link';
  
 const Navbar = () => {
 
@@ -27,51 +27,46 @@ const Navbar = () => {
     window.addEventListener('scroll', changeNavbarColor);
 
     return ( 
-        <nav className= {colorChange ? 'navbarColorChange' : 'navbar'}>
+        <div id="top" className= {colorChange ? 'navbarColorChange' : 'navbar'}>
           <div className='navbar-container'>
-            <Link to='/' className={colorChange ? 'changeLogoColor' : 'navbar-logo'} onClick={closeMobileMenu}>
+            <HashLink smooth to='#top' className={colorChange ? 'changeLogoColor' : 'navbar-logo'} onClick={closeMobileMenu}>
               <i className='fas fa-user' />
-            </Link>
+            </HashLink>
             <div className='menu-icon' onClick={handleClick}>
               <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
             </div>
 
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               <li className= {colorChange ? 'changeUnderLine' : 'nav-item' }>
-                <Link to='/' className={colorChange ? 'linkLetterColorChange' : 'nav-links' } onClick={closeMobileMenu}>
+                <HashLink smooth to='#top' className={colorChange ? 'linkLetterColorChange' : 'nav-links' } onClick={closeMobileMenu}>
                   HOME
-                </Link>
+                </HashLink>
               </li>
               <li className={colorChange ? 'changeUnderLine' : 'nav-item' }>
-                <Link
-                  to='/about'
-                  className={colorChange ? 'linkLetterColorChange' : 'nav-links' }
-                  onClick={closeMobileMenu}
-                 >
-                ABOUT
-                </Link>
+                <HashLink smooth to="/About#about" className={colorChange ? 'linkLetterColorChange' : 'nav-links' }
+                  onClick={closeMobileMenu}>About</HashLink>
               </li>
               <li className={colorChange ? 'changeUnderLine' : 'nav-item' }>
-                <Link
-                  to='/work'
+                <HashLink
+                  smooth to='/Portfolio#work'
                   className={colorChange ? 'linkLetterColorChange' : 'nav-links' }
                   onClick={closeMobileMenu}
                 >
                   WORK
-                </Link>
+                </HashLink>
               </li>
               <li className={colorChange ? 'changeUnderLine' : 'nav-item' }>
-                <Link
-                  to='/contact'
+                <HashLink
+                  smooth to='/Contact#contact'
                   className={colorChange ? 'linkLetterColorChange' : 'nav-links' }
                   onClick={closeMobileMenu}
                 >
                   CONTACT
-                </Link>
+                </HashLink>
               </li>
             </ul>
           </div>
-        </nav>
+        </div>
      ); 
 }
  

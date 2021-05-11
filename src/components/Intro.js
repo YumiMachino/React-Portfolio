@@ -8,7 +8,7 @@ import Typing from 'react-typing-animation';
 const Intro = () => {
 
     return ( 
-        <div className="intro-section">
+        <div id="intro" className="intro-section">
             <h1 className="intro-title">Hello, <br/>I'm Yumi Machino</h1>
             <h1 className="intro-title-mobile">Hello, I'm <br/>Yumi Machino</h1>
             <div className="intro-subtitle">

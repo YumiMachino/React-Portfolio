@@ -12,6 +12,7 @@ const Contact = () => {
 
     return ( 
         <Box 
+            id="contact"
             width={1} 
             height="100%"
             style = {{backgroundImage: `url(${astronomy})`}}
