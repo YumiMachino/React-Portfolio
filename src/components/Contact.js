@@ -9,31 +9,41 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Contact.css'
 import React, { useState } from 'react'
+import { ControlCameraOutlined } from '@material-ui/icons';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const Contact = () => {
 
-    const [isSent, setIsSent] = useState(false)
+    /* useState variables*/
+    const [isSent, setIsSent] = useState(false);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
 
-    const contactSection = (isSent) => {
-        if (isSent === false) {
-            return (
-                <div>
-                    console.log("not yet submitted.")
-                </div>
-            )
-        } else {
-            <div>
-                console.log("submitted")
-            </div>
+    /* event handlers*/
+    const submitBtnHandler = () => {
+        setName(name)
+        setEmail(email)
+        setSubject(subject)
+        setMessage(message)
+        console.log("final result: ", name, email, subject, message)
+    }
+
+    /*input validation, set state*/
+    const changeHandler = (event) => {
+        if (event.target.name === "name")  {
+            setName(event.target.value)
+        } else if (event.target.name === "email")  {
+            setEmail(event.target.value)
+        } else if (event.target.name === "subject")  {
+            setSubject(event.target.value)
+        } else if (event.target.name === "message") {
+            setMessage(event.target.value)
         }
+        
     }
 
-    const submitBtnHandler = event => {
-        console.log(event)
-        console.log("aaaaaaa")
-        setIsSent(true)
-        console.log("saaa", isSent)
-    }
 
     const gitHubLink = "https://github.com/YumiMachino"
     const linkedInLink = "https://www.linkedin.com/in/machi-no-058778210/"
@@ -65,7 +75,7 @@ const Contact = () => {
                         <h5 className="title-left">Send A Message</h5>
                     </div>
                
-                    <div >
+                    <form onSubmit={submitBtnHandler} autoComplete="off">
                         <TextField 
                             id="outlined-full-width" 
                             label="Your Name" 
@@ -73,6 +83,9 @@ const Contact = () => {
                             fullWidth
                             margin="normal"
                             style={{margin: 20}}
+                            onChange={changeHandler}
+                            name="name"
+                            value={name}
                                 />
                         <TextField 
                             id="outlined-full-width" 
@@ -81,6 +94,9 @@ const Contact = () => {
                             fullWidth
                             margin="normal"
                             style={{margin: 20}}
+                            onChange={changeHandler}
+                            name="email"
+                            aria-describedby="component-error-text"
                                 />
                         <TextField 
                             id="outlined-full-width" 
@@ -89,6 +105,8 @@ const Contact = () => {
                             fullWidth
                             margin="normal"
                             style={{margin: 20}}
+                            onChange={changeHandler}
+                            name="subject"
                                 />
                         <TextField 
                             id="outlined-multiline-static" 
@@ -99,11 +117,13 @@ const Contact = () => {
                             rows={4}
                             margin="normal"
                             style={{margin: 20}}
+                            onChange={changeHandler}
+                            name="message"
                                 />
                         <div className="btn-style" >              
-                            <Button variant="contained" color="primary" onClick={submitBtnHandler}>Send Messages</Button>
+                            <Button variant="contained" color="primary" onClick={submitBtnHandler} >Send Messages</Button>
                         </div>
-                    </div>
+                    </form>
                  </Box>
 
                 <Box
