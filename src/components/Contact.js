@@ -7,8 +7,37 @@ import { Button, Container } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import './Contact.css'
+import React, { useState } from 'react'
 
 const Contact = () => {
+
+    const [isSent, setIsSent] = useState(false)
+
+    const contactSection = (isSent) => {
+        if (isSent === false) {
+            return (
+                <div>
+                    console.log("not yet submitted.")
+                </div>
+            )
+        } else {
+            <div>
+                console.log("submitted")
+            </div>
+        }
+    }
+
+    const submitBtnHandler = event => {
+        console.log(event)
+        console.log("aaaaaaa")
+        setIsSent(true)
+        console.log("saaa", isSent)
+    }
+
+    const gitHubLink = "https://github.com/YumiMachino"
+    const linkedInLink = "https://www.linkedin.com/in/machi-no-058778210/"
+
 
     return ( 
         <Box 
@@ -71,8 +100,8 @@ const Contact = () => {
                             margin="normal"
                             style={{margin: 20}}
                                 />
-                        <div className="btn-style" style={{justifyContent: 'center'}}>              
-                            <Button variant="contained" color="primary">Send Messages</Button>
+                        <div className="btn-style" >              
+                            <Button variant="contained" color="primary" onClick={submitBtnHandler}>Send Messages</Button>
                         </div>
                     </div>
                  </Box>
@@ -95,10 +124,10 @@ const Contact = () => {
                     </div>
                     <div className="link-section">
                         <IconButton color="primary" aria-label="GitHub link" size="medium">
-                            <GitHubIcon />
+                            <a href={gitHubLink}> <GitHubIcon /></a>
                         </IconButton>
                          <IconButton color="primary" aria-label="GitHub link" size="medium">
-                            <LinkedInIcon />
+                            <a href={linkedInLink}><LinkedInIcon /></a>
                         </IconButton>
                     </div>
                  </Box>

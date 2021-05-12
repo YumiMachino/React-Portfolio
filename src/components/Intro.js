@@ -4,6 +4,7 @@ import './Intro.css'
 import { Button, Container } from '@material-ui/core';
 /*React-typing-animation library*/
 import Typing from 'react-typing-animation';
+import { HashLink } from 'react-router-hash-link';
 
 const Intro = () => {
 
@@ -14,10 +15,12 @@ const Intro = () => {
             <div className="intro-subtitle">
                 <Typing speed={150} loop={true}>
                     <span>Software Developer</span>
-                    <Typing.Backspace count={20}/>
+                    <Typing.Backspace count={19}/>
                 </Typing>
             </div>
-            <Button variant="contained" color="primary">View My Work</Button>
+                <HashLink to="/Portfolio#work" style={{textDecoration:"none", color:'white'}}>
+                    <Button variant="contained" color="primary">View My Work</Button>  
+                </HashLink>
         </div>
      );
 }

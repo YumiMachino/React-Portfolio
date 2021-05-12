@@ -29,7 +29,7 @@ const Navbar = () => {
     return ( 
         <div id="top" className= {colorChange ? 'navbarColorChange' : 'navbar'}>
           <div className='navbar-container'>
-            <HashLink smooth to='#top' className={colorChange ? 'changeLogoColor' : 'navbar-logo'} onClick={closeMobileMenu}>
+            <HashLink smooth to='/Navbar#top' className={colorChange ? 'changeLogoColor' : 'navbar-logo'} onClick={closeMobileMenu}>
               <i className='fas fa-user' />
             </HashLink>
             <div className='menu-icon' onClick={handleClick}>
@@ -38,7 +38,7 @@ const Navbar = () => {
 
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               <li className= {colorChange ? 'changeUnderLine' : 'nav-item' }>
-                <HashLink smooth to='#top' className={colorChange ? 'linkLetterColorChange' : 'nav-links' } onClick={closeMobileMenu}>
+                <HashLink smooth to='/Navbar#top' className={colorChange ? 'linkLetterColorChange' : 'nav-links' } onClick={closeMobileMenu}>
                   HOME
                 </HashLink>
               </li>
