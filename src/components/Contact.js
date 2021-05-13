@@ -11,6 +11,7 @@ import './Contact.css'
 import React, { useState } from 'react'
 import { ControlCameraOutlined } from '@material-ui/icons';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import axios from 'axios';
 
 const Contact = () => {
 
@@ -20,14 +21,56 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
-
+   
     /* event handlers*/
-    const submitBtnHandler = () => {
-        setName(name)
-        setEmail(email)
-        setSubject(subject)
-        setMessage(message)
-        console.log("final result: ", name, email, subject, message)
+    const submitBtnHandler = (e) => {
+        e.preventDefault();  
+        console.log("Sending")
+        
+        let data = {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+        }
+
+        // axios({
+        //     method: "POST",
+        //     url:"/api/server",
+        //     data: data
+        // }).then((response)=>{
+
+        //     setIsSent(true).resetForm()
+        //     // if (response.data.status === 'success') {
+        //     //     alert("Message Sent.");
+        //     //     this.resetForm()
+        //     // } else if(response.data.status ==='fail') {
+        //     //     alert("Message failed to send.")
+        //     // }  
+        // })
+
+        /* fetch call to '/api/contact', POST to the url, send JSON of data object */
+        fetch('api/contact', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then((res) => {
+            console.log('Response received')
+            if (res.status === 200) {
+                console.log('Respnse suceeded!')
+                setIsSent(true)
+                setName('')
+                setEmail('')
+                setMessage('')
+            }
+        })
+    }
+
+    const resetForm = () => {
+        // setData({name:'', email:'',subject:'',message:''})
     }
 
     /*input validation, set state*/
@@ -75,7 +118,7 @@ const Contact = () => {
                         <h5 className="title-left">Send A Message</h5>
                     </div>
                
-                    <form onSubmit={submitBtnHandler} autoComplete="off">
+                    <form autoComplete="off">
                         <TextField 
                             id="outlined-full-width" 
                             label="Your Name" 
@@ -96,7 +139,6 @@ const Contact = () => {
                             style={{margin: 20}}
                             onChange={changeHandler}
                             name="email"
-                            aria-describedby="component-error-text"
                                 />
                         <TextField 
                             id="outlined-full-width" 
