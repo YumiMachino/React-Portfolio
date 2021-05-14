@@ -11,82 +11,23 @@ import './Contact.css'
 import React, { useState } from 'react'
 import { ControlCameraOutlined } from '@material-ui/icons';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import axios from 'axios';
+import emailjs from "emailjs-com";
 
 const Contact = () => {
 
-    /* useState variables*/
-    const [isSent, setIsSent] = useState(false);
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [subject, setSubject] = useState('');
-    const [message, setMessage] = useState('');
-   
     /* event handlers*/
-    const submitBtnHandler = (e) => {
-        e.preventDefault();  
-        console.log("Sending")
-        
-        let data = {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        }
+    const sendEmail = (e) => {
+        e.preventDefault();
 
-        // axios({
-        //     method: "POST",
-        //     url:"/api/server",
-        //     data: data
-        // }).then((response)=>{
+     emailjs.sendForm('gmail', 'template_cv45din', e.target)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
 
-        //     setIsSent(true).resetForm()
-        //     // if (response.data.status === 'success') {
-        //     //     alert("Message Sent.");
-        //     //     this.resetForm()
-        //     // } else if(response.data.status ==='fail') {
-        //     //     alert("Message failed to send.")
-        //     // }  
-        // })
-
-        /* fetch call to '/api/contact', POST to the url, send JSON of data object */
-        fetch('api/contact', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then((res) => {
-            console.log('Response received')
-            if (res.status === 200) {
-                console.log('Respnse suceeded!')
-                setIsSent(true)
-                setName('')
-                setEmail('')
-                setMessage('')
-            }
-        })
     }
-
-    const resetForm = () => {
-        // setData({name:'', email:'',subject:'',message:''})
-    }
-
-    /*input validation, set state*/
-    const changeHandler = (event) => {
-        if (event.target.name === "name")  {
-            setName(event.target.value)
-        } else if (event.target.name === "email")  {
-            setEmail(event.target.value)
-        } else if (event.target.name === "subject")  {
-            setSubject(event.target.value)
-        } else if (event.target.name === "message") {
-            setMessage(event.target.value)
-        }
-        
-    }
-
 
     const gitHubLink = "https://github.com/YumiMachino"
     const linkedInLink = "https://www.linkedin.com/in/machi-no-058778210/"
@@ -117,55 +58,50 @@ const Contact = () => {
                     <div>
                         <h5 className="title-left">Send A Message</h5>
                     </div>
-               
-                    <form autoComplete="off">
-                        <TextField 
-                            id="outlined-full-width" 
-                            label="Your Name" 
-                            variant="outlined" 
+
+                    <form onSubmit={sendEmail}>
+                        <TextField
+                            id="outlined-full-width"
+                            label="Your Name"
+                            variant="outlined"
                             fullWidth
                             margin="normal"
                             style={{margin: 20}}
-                            onChange={changeHandler}
                             name="name"
-                            value={name}
-                                />
-                        <TextField 
-                            id="outlined-full-width" 
-                            label="Your Email" 
-                            variant="outlined" 
+                             />
+                         <TextField
+                            id="outlined-full-width"
+                            label="Your Email"
+                            variant="outlined"
                             fullWidth
                             margin="normal"
                             style={{margin: 20}}
-                            onChange={changeHandler}
                             name="email"
-                                />
-                        <TextField 
-                            id="outlined-full-width" 
-                            label="Subject" 
-                            variant="outlined" 
+                             />
+                        <TextField
+                            id="outlined-full-width"
+                            label="Subject"
+                            variant="outlined"
                             fullWidth
                             margin="normal"
                             style={{margin: 20}}
-                            onChange={changeHandler}
                             name="subject"
-                                />
-                        <TextField 
-                            id="outlined-multiline-static" 
-                            label="Message" 
-                            variant="outlined" 
+                             />
+                        <TextField
+                            id="outlined-full-width"
+                            label="Message"
+                            variant="outlined"
                             fullWidth
                             multiline
                             rows={4}
                             margin="normal"
                             style={{margin: 20}}
-                            onChange={changeHandler}
                             name="message"
-                                />
-                        <div className="btn-style" >              
-                            <Button variant="contained" color="primary" onClick={submitBtnHandler} >Send Messages</Button>
-                        </div>
-                    </form>
+                             />
+                         <div className="btn-style">
+                                <input className="send-btn" type="submit" value="SEND MESSAGES" />
+                            </div>           
+                     </form>
                  </Box>
 
                 <Box
@@ -199,3 +135,20 @@ const Contact = () => {
 }
  
 export default Contact;
+
+
+
+
+//   <form className="contact-form" onSubmit={sendEmail}>
+
+//                         {/* <input type="hidden" name="contact_number" /> */}
+//                         <label>Name</label>
+//                         <input type="text" name="name" />
+//                         <label>Email</label>
+//                         <input type="email" name="email" />
+//                         <label>Subject</label>
+//                         <input type="text" name="subject" />
+//                         <label>Message</label>
+//                         <textarea name="message" />
+//                         <input type="submit" value="Send" />
+//                      </form>
